@@ -1,0 +1,6 @@
+<import src="../movie-grid/movie-grid-template.wxml" />
+<loading hidden="{{hiddenLoading}}">数据正在加载</loading>
+<template is="movieGridTemplate" data="{{movies}}" />
+<view class="fix_tip {{disabledRemind?'active':''}}">
+    <text>没有更多啦</text>
+  </view>

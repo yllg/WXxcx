@@ -1,0 +1,13 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <view class='info'>
+    <icon type="info" size="16" /> 温馨提示：您个人信息只是存储在您浏览器本地的缓存中，并没有发送到某处存储起来哦~请放心使用 ٩(๑❛ᴗ❛๑)۶
+  </view>
+  <block wx:for="{{userInfos}}" wx:for-item="userInfo" wx:key="key">
+    <text>{{index + 1}}. {{userInfo.logtime}}</text>
+    <text>用户昵称：{{userInfo.nickName}}</text>
+    <text>性别：{{userInfo.gender==1?'男':'女'}}</text>
+    <text>城市：{{userInfo.city}}</text>
+    <image class="avata" src="{{userInfo.avatarUrl}}" />
+  </block>
+</view>

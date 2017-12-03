@@ -1,0 +1,51 @@
+.icon-image{
+  width:100rpx;
+  height:100rpx;
+  margin: 20rpx 70rpx 0;
+}
+.moreTab{
+  margin: 0 0 10rpx 10rpx;
+  color:  #666;
+  font-size:15px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.more_container{ 
+    height: 320px; 
+    border: 2rpx solid #2a579a;
+    border-radius: 10px;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    padding: 10rpx 10rpx;
+    /* 垂直居中 */
+    align-items: center; 
+    /* 水平居中 */
+    justify-content: center; 
+} 
+.more_info{
+  height: 100%;
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  padding: 25rpx 20rpx ;
+  margin: 0;
+  color:  #666;
+  font-size:14px;
+  background-color:#f5f5f5;
+}
+.tabText{
+  margin:0 0 0 90rpx;
+}
+.tabText.more{
+  margin-left: 65rpx;
+}
+.moreSelected{
+  border: 1px #2a579a solid;
+  border-radius: 50%;
+}
+.conImage{
+  width: 320px;
+  height: 320px;
+  margin-left: 35rpx;
+}

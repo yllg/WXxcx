@@ -1,0 +1,74 @@
+/**index.wxss**/
+.news-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  height:150rpx;
+  /*width属性解决标题文字太短而导航缩略偏移*/
+  width:100%;
+  border-bottom:1px solid #2a579a;
+}
+
+.news-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-stamp {
+    font-size: 25rpx;
+    color:darkgray;
+    padding: 0 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.news-title {
+  margin: 10rpx;
+  font-size: 30rpx;
+}
+
+
+.container {
+  height: 5000rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+} 
+
+.list-image {
+  width:150rpx;
+  height:100rpx;
+}
+
+.swiper-image {
+	width: 100%;
+}
+.icon-image{
+  width:100rpx;
+  height:100rpx;
+  margin: 20rpx 20rpx 0;
+}
+.imagetext{
+  margin: 0 0 10rpx 10rpx;
+  color:  #666;
+  font-size:15px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.newsSelected{
+  border: 1px #2a579a solid;
+  border-radius: 20%;
+}
+.tabText{
+  margin:0 0 0 40rpx;
+}

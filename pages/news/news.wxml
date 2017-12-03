@@ -1,0 +1,40 @@
+<view class='imagetext'>
+  <view class="{{selsectState[0]?'newsSelected':''}}" bindtap='clickNation'>
+    <image class="icon-image" src="../../images/report.png"/>
+    <view class='tabText'>国际</view>   
+  </view>
+  <view class="{{selsectState[1]?'newsSelected':''}}" bindtap='clickSport'>
+    <image class="icon-image" src="../../images/tiyu.png"/>
+    <view class='tabText'>体育</view>
+  </view>
+  <view class="{{selsectState[2]?'newsSelected':''}}" bindtap='clickScience'>
+    <image class="icon-image" src="../../images/keji.png"/>
+    <view class='tabText'>科技</view>
+  </view>
+  <view class="{{selsectState[3]?'newsSelected':''}}" bindtap='clickHappy'>
+    <image class="icon-image" src="../../images/yule.png"/>
+    <view class='tabText'>娱乐</view>
+  </view>
+  <view class="{{selsectState[4]?'newsSelected':''}}" bindtap='clickFinance'>
+    <image class="icon-image" src="../../images/purse.png"/>
+    <view class='tabText'>财经</view>
+  </view>
+</view>
+
+<!-- 新闻列表 -->
+<view class="container news-list">
+  <block wx:for="{{topNews}}" wx:key="key">
+    <view class="news-item" data-title="{{item.title}}" data-url="{{item.url}}" bindtap="bindViewTap">
+		<view>
+		  <image class="list-image" src="{{item.thumbnail_pic_s}}" mode="aspectFill"/>
+		</view>
+      <view class="news-text">
+        <text class="news-title">{{item.title}}</text>
+        <view class="news-stamp">
+          <text>{{item.author_name}}</text>
+          <text>{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

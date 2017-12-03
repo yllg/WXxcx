@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<import src="../movies/movie-list/movie-list-template.wxml" />
+<import src="../movies/movie-grid/movie-grid-template.wxml" />
+<view class='customSwiper'>
+  <swiper class='banner' autoplay='true' interval='5000' duration='300' bindchange='switchTab'>
+    <block wx:for="{{sliderList}}" wx:key="key">
+      <swiper-item>
+        <image style='width:100%;height:100%;' src="{{item.imageSource}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="tab">
+    <block wx:for="{{sliderList}}" wx:key="key">
+      <view wx:if="{{item.selected}}" class='tab-item selected'>{{index+1}}</view>
+      <view wx:else class="tab-item">{{index+1}}</view>
+    </block>
+  </view>
+</view>
+<view class="index">
+  <!--<text>点击地名以更换城市</text>-->
+  <view class="hotcity-common" style="display:inline;">当前位置: </view>
+  <view class="thisCityName">{{location}}{{county}}</view>
+  <view class="thisCityName" bindtap="jump">
+    <icon type="download" size="18" color='#2a579a' class='changeCity'/>
+    <text>更改定位</text>  
+  </view>
+  <view class="weatherwrap" bindtap='gotoWeather'>
+    <!--显示当天的天气信息-->
+    <view class="info">
+      <!--城市名称 当前日期-->
+      <view class="city">{{location}} ({{today}})</view>
+      <!--当天温度-->
+      <view class="temp">{{weatherData.tmp}}℃</view>
+      <!--其他描述-->
+      <view class="weather">
+        <view>{{weatherData.cond_txt}}</view>
+        <view>{{weatherData.wind_dir}}</view>
+        <view>{{weatherData.wind_sc}}</view>
+        <view>PM2.5: {{air.pm25}}</view>
+        <view>{{air.qlty}}</view>
+      </view>
+      <view class="life" style='text-indent:1em;'>{{dress.txt}}</view>
+    </view>
+  </view>
+  <view class="container" wx:if="{{containerShow}}">
+    <view class="movies-template">
+      <template is="movieListTemplate" data="{{...inTheaters}}" />
+    </view>
+  </view>
+</view>

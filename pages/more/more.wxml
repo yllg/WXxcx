@@ -1,0 +1,26 @@
+<view class='moreTab'>
+  <view class="{{selsectState[0]?'moreSelected':''}}" bindtap='clickDict'>
+    <image class="icon-image" src="../../images/cidian.png"/>
+    <view class='tabText'>词典</view>   
+  </view>
+  <view class="{{selsectState[1]?'moreSelected':''}}" bindtap='clickExpre'>
+    <image class="icon-image" src="../../images/kuaidi.png"/>
+    <view class='tabText'>快递</view>
+  </view>
+  <view class="{{selsectState[2]?'moreSelected':''}}" bindtap='clickMore'>
+    <image class="icon-image" src="../../images/more.png"/>
+    <view class='tabText more'>敬请期待...</view>
+  </view>
+</view>
+
+<view class="more_container"> 
+  <view wx:if="{{selectIndex}}">
+    <image class="conImage" src="../../images/more/more{{selectIndex}}.png"/>
+  </view>
+</view> 
+<view> 
+  <text class="more_info" >友情链接（点击下面文字扫码进入）</text> 
+  <text class="{{selsectState[3]?'more_info moreSelected':'more_info'}}" bindtap='clickGithub'>本项目github地址:https://github.com/yllg </text> 
+  <text class="{{selsectState[4]?'more_info moreSelected':'more_info'}}" bindtap='clickBlog'>我的博客园地址:http://www.cnblogs.com/xuanbiyijue/</text> 
+</view> 
+

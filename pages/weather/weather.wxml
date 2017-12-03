@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<image class="bg" mode="aspectFill" src="http://img0.imgtn.bdimg.com/it/u=2119753535,4266859939&fm=214&gp=0.jpg"></image>
+<view class="wrapper">
+  <view class="curWeather">
+    <view class="curTemperature">
+      <view class="tmp">{{now.tmp}}°</view>
+      <view class="city" bindtap="bindCity">{{city}}{{district}}</view>
+      <view class="type">{{now.cond_txt}} | 空气 {{quality.qlty}}</view>
+    </view>
+    <view class="curExtern">
+      <view class="wind">
+        <view class="">{{now.wind_dir}}</view>
+        <view wx:if="{{now.wind_sc=='微风'}}" class="val">{{"<="}}2级</view>
+        <view wx:else class="val">{{now.wind_sc}}级</view>
+      </view>
+      <view class="line"></view>
+      <view class="relWet">
+        <view class="">相对湿度</view>
+        <view class="val">{{now.hum}}%</view>
+      </view>
+      <view class="line"></view>
+      <view class="humanTmp">
+        <view class="">体感温度</view>
+        <view class="val">{{now.fl}}°</view>
+      </view>
+    </view>
+  </view>
+  <view class="forecast">
+    <block wx:for="{{forecast}}" wx:for-index="index" wx:for-item="fc" wx:key="key">
+      <view class="castItem">
+        <view class="castDay">{{showday[index]}}</view>
+        <view class="castType">
+          <image class="typeImg" src="../../images/weather/{{fc.cond_code_d}}.png"></image>
+          {{fc.cond_txt_d}} | {{fc.wind_sc}}
+        </view>
+        <view class="castTmp">
+          {{fc.tmp_max}}° / {{fc.tmp_min}}°
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

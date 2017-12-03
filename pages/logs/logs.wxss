@@ -1,0 +1,12 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.avata{
+  width:80rpx;
+  height:80rpx;
+}
+.info{
+  margin-bottom: 10rpx;
+}
